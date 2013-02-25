@@ -88,7 +88,6 @@
     var flipped = false;
     for(var i = 0; i < pts.length; i++) {
       pt = proj(pts[i][0], pts[i][1]);
-      console.log(pt)
       this.ctx.lineTo(pt[0], pt[1]);
       if(pts[i][0] > 50 && !flipped) {
         this.ctx.stroke();

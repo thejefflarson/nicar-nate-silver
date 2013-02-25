@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    div.graph {
+      margin-left:  auto;
+      margin-right: auto;
+      width: 720px;
+    }
+    div.graph div {
+      padding: 10px;
+      width: 200px;
+      float: left;
+      text-align:center;
+      margin: 10px;
+      font-family: rockwell;
+      font-weight: bold;
+      font-size: 20px;
+      text-rendering: optimizeLegibility;
+    }
+
+    div.graph div.win {
+      width: 2px;
+      height: 2px;
+      float: left;
+      border-radius: 2px;
+      padding: 0px;
+      margin: 1px;
+    }
+
+    div.win.o {
+      background-color: white;
+    }
+    span {
+      display:block;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    div.win.r {
+      background-color: black;
+    }
+
+    canvas {
+      width:  200px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+<div id="pdf" class="graph"></div>
+<div id="cdf" class="graph"></div>
+<div id="carlos" class="graph"></div>
+
+<script src="javascripts/stats.js"></script>
+<script src="javascripts/pdf.js"></script>
+<script src="javascripts/cdf.js"></script>
+<script src="javascripts/plotter.js"></script>
+<script src="javascripts/run.js"></script>
+</body>
+</html>
