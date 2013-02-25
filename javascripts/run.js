@@ -88,14 +88,7 @@ var experiment = function(id){
   };
 
   var runs = [];
-  var i = 0;
-  var go = function(){
-    i++;
+  for(var i = 0; i < 1000; i++)
     runs = runs.concat(states.reduce(reducer, 0));
-    if(i < 1000) {
-      window.requestAnimationFrame(go);
-    }
-  };
-  window.requestAnimationFrame(go);
 };
 experiment('carlos');
