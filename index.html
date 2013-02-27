@@ -5,19 +5,56 @@
     body {
       padding: 0;
       margin: 0;
+      font-family: rockwell;
+      text-align: center;
     }
-    div.graph {
+
+    h1 {
+      font-size: 80px;
+
+    }
+
+    h2 {
+      font-size: 40px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 40px;
+      margin-bottom: 100px;
+      font-weight: bold;
+    }
+
+    div.graph, div#math {
       margin-left:  auto;
       margin-right: auto;
       width: 720px;
+      min-height: 800px;
+      clear: both;
     }
+
+    div#math div {
+      display:block;
+      width: 100%;
+      padding-bottom: 100px;
+      text-align: center;
+    }
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img.big {
+      margin-bottom: 500px;
+    }
+
     div.graph div {
       padding: 10px;
       width: 200px;
       float: left;
       text-align:center;
       margin: 10px;
-      font-family: rockwell;
       font-weight: bold;
       font-size: 20px;
       text-rendering: optimizeLegibility;
@@ -52,8 +89,25 @@
   </style>
 </head>
 <body>
-<div id="pdf" class="graph"></div>
-<div id="cdf" class="graph"></div>
+<h1>Be Your wn Nate Silver</h1>
+<p>CO polls [52, 51, 53, 51, 51, 50, 51, 52, 48, 51]</p>
+<div id="pdf" class="graph">
+  <h2>Probability Density Functions</h2>
+</div>
+<br clear="both">
+<div id="math">
+  <h2>Cumulative Density Functions</h2>
+  <div><img src="http://upload.wikimedia.org/math/5/b/8/5b878d976a249ac54ef995c986669d4c.png" class="big"></div>
+  <div><img src="images/nothingmatters.gif" class="big"></div>
+  <div><img src="http://upload.wikimedia.org/math/b/2/3/b2383af7587680ee18887bbb66aff096.png"></div>
+  <div><img src="http://upload.wikimedia.org/math/1/8/b/18bcd3be4f61d30abb64e97e365b2665.png"></div>
+</div>
+<div id="cdf" class="graph">
+  <h2>Cumulative Density Functions Graphed</h2>
+</div>
+<div id="random">
+  <h2>Monte Carlo Simulation</h2>
+</div>
 <div id="carlos" class="graph"></div>
 
 <script src="javascripts/stats.js"></script>
