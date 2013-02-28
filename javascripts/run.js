@@ -53,7 +53,7 @@ var State = function(div, key){
   this.plot  = document.createElement('div');
   var name = document.createElement('span');
   name.setAttribute('class', 'name');
-  name.innerHTML = key;
+  name.innerHTML = key + " <br>Obama odds: " + Math.round((1-this.thres) * 100) + "%";
   this.plot.appendChild(name);
   this.votes = votes[key];
   div.appendChild(this.plot);
@@ -73,25 +73,27 @@ State.prototype.run = function(){
   }
 };
 
-
 var experiment = function(id){
   var div    = document.getElementById(id);
   var states = Object.keys(data)
-        .sort(function(a, b) {
-          return stats.mean(data[a]) > stats.mean(data[b]) ? 1 : -1;
-        }).map(function(state){
-          return new State(div, state);
-        });
+                     .sort(function(a, b) {
+                       return stats.mean(data[a]) > stats.mean(data[b]) ? 1 : -1;
+                     }).map(function(state){
+                       return new State(div, state);
+                     });
 
   var reducer = function(memo, state) {
     return memo + state.run();
   };
 
-  var wins = 0;
-  for(var i = 0; i < 1000; i++) {
+  var wins = 0, total = 1000;
+  for(var i = 0; i < total; i++) {
     var run = states.reduce(reducer, 0);
     if(run + 237 > 270) wins++;
   }
-  console.log(wins / 1000);
+
+  var tot = document.createElement('div');
+  tot.innerHTML = "<br clear='all'><h2>Obama wins " + wins / total * 100 + "% of the time</h2>";
+  document.body.appendChild(tot);
 };
 experiment('carlos');

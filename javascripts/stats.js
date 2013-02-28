@@ -22,5 +22,4 @@
   stats.mean = function(arr){
     return stats.sum(arr) / arr.length;
   };
-
 }).call(this);
